@@ -5,7 +5,7 @@ const TenantInfoBox = () => {
       <div className="flex flex-col gap-3 text-sm justify-between md:flex-row lg:text-base">
         <div className="flex flex-col gap-3">
           <h1 className="flex gap-2 font-semibold">
-            Name: <span className="font-normal">Name</span>
+            Name: <span className="font-normal">Testing</span>
           </h1>
 
           <h1 className="flex gap-2 font-semibold">
