@@ -1,6 +1,6 @@
 const TenantInfoBox = () => {
   return (
-    <div className="flex flex-col w-full gap-2 pl-3 py-1 bg-slate-100 border border-slate-300 rounded-md shadow-md md:w-[100%] md:px-8 md:py-8 lg:text-base lg:w-[85%] lg:px-16 lg:gap-6">
+    <div className="flex flex-col w-full gap-2 px-3 py-3 bg-slate-100 border border-slate-300 rounded-md shadow-md md:w-[100%] md:px-8 md:py-8 lg:text-base lg:w-[85%] lg:px-16 lg:gap-6">
       <h1 className="font-bold text-lg">Bill for the month of:</h1>
       <div className="flex flex-col gap-3 text-sm justify-between md:flex-row lg:text-base">
         <div className="flex flex-col gap-3">
