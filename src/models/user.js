@@ -18,25 +18,9 @@ const userSchema = new Schema(
       required: [true, "Password is required"],
       select: false,
     },
-    stallName: {
-      type: String,
-      required: [true, "Stall name is required"],
-    },
     stallNumber: {
       type: String,
       required: [true, "Stall number is required"],
-    },
-    previousBalance: {
-      type: Number,
-      default: 0,
-    },
-    currentBalance: {
-      type: Number,
-      default: 0,
-    },
-    totalBalance: {
-      type: Number,
-      default: 0,
     },
     role: {
       type: String,

@@ -1,5 +1,6 @@
 import React from "react";
 import HistoryThead from "./HistoryThead";
+import HistoryTbody from "./HistoryTbody";
 
 const History = () => {
   return (
@@ -10,6 +11,11 @@ const History = () => {
       <div>
         <table className="w-full caption-bottom text-sm">
           <HistoryThead />
+          <HistoryTbody />
+          <HistoryTbody />
+          <HistoryTbody />
+          <HistoryTbody />
+          <HistoryTbody />
         </table>
       </div>
     </div>

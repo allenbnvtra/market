@@ -60,8 +60,7 @@ const InfoBox = () => {
               key={user._id}
               name={user.name}
               stallnumber={user.stallNumber}
-              prevbal={user.previousBalance}
-              totalbal={user.totalBalance}
+              email={user.email}
               href={`/tenant/${user._id}`}
             />
           ))}
