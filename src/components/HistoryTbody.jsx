@@ -3,18 +3,22 @@ import React from "react";
 const HistoryTbody = () => {
   return (
     <tbody>
-      <tr>
-        <td className="px-1 py-2 max-w-[2rem] font-light text-sm text-center sticky top-0 sm:py-3 lg:text-base">
+      <tr className="border border-slate-300">
+        <td className="py-2 max-w-[2rem] font-light text-sm text-center sticky sm:py-3">
+          23958473982
+        </td>
+        <td className="py-2 max-w-[2rem] font-light text-sm text-center sticky sm:py-3">
           Jan. 2022- Feb 2022
         </td>
-        <td className="px-1 py-2 max-w-[2rem] font-light text-sm text-center sticky top-0 sm:py-3 lg:text-base">
-          P 3000
-        </td>
-        <td className="px-1 py-2 max-w-[2rem] font-light text-sm text-center sticky top-0 sm:py-3 lg:text-base">
+        <td className="py-2 max-w-[2rem] font-light text-sm text-center sticky sm:py-3">
           Unpaid
         </td>
-        <td className="px-1 py-2 max-w-[2rem] font-light text-sm text-center sticky top-0 sm:py-3 lg:text-base">
-          view
+        <td className="py-2 max-w-[2rem] font-light text-sm text-center sticky sm:py-3"></td>
+        <td className="py-2 max-w-[2rem] font-light text-sm text-center sticky sm:py-3">
+          3000
+        </td>
+        <td className="py-2 max-w-[2rem] font-light text-sm text-blue-700 text-center sticky sm:py-3 cursor-pointer">
+          view details &gt;
         </td>
       </tr>
     </tbody>

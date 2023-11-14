@@ -22,7 +22,7 @@ export default async function PrivatePagesLayout({ children }) {
       <Header />
       <div className="flex flex-col pt-16 bg-[#F0F2F5] text-[#3c4043]">
         <Navbar />
-        <div className="flex-shrink px-5 w-full mt-3">{children}</div>
+        <div className="flex justify-center px-5 w-full mt-3">{children}</div>
       </div>
     </section>
   );

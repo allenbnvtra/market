@@ -1,13 +1,13 @@
 "use client";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import Infos from "./Infos";
-import Tablehead from "./Tablehead";
+import TenantTbody from "./TenantTbody";
+import TenantThead from "./TenantThead";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import SearchBox from "./Searchbox";
 
-const InfoBox = () => {
+const TenantTable = () => {
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -40,7 +40,7 @@ const InfoBox = () => {
 
   if (loading) {
     return (
-      <div className=" w-full flex justify-center justify-items-center mt-3">
+      <div className=" w-full flex justify-center justify-items-center mt-3s">
         <div className="w-[100%] max-h-[30rem] lg:w-[85%]">
           <Skeleton height={80} className="mb-1 z-0" count={1} />
           <Skeleton height={50} className="z-0" count={7} />
@@ -50,13 +50,13 @@ const InfoBox = () => {
   }
 
   return (
-    <div className=" w-full flex flex-col justify-center items-center">
+    <div className=" w-full flex flex-col justify-center items-center mt-[3rem]">
       <SearchBox getSearchResult={setUsers} />
       <div className="w-[100%] max-h-[26rem] overflow-scroll lg:w-[85%]">
         <table className="w-full caption-bottom text-sm">
-          <Tablehead />
+          <TenantThead />
           {users.map((user) => (
-            <Infos
+            <TenantTbody
               key={user._id}
               name={user.name}
               stallnumber={user.stallNumber}
@@ -70,4 +70,4 @@ const InfoBox = () => {
   );
 };
 
-export default InfoBox;
+export default TenantTable;

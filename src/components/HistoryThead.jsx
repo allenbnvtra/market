@@ -4,16 +4,22 @@ const HistoryThead = () => {
   return (
     <thead>
       <tr>
-        <th className="px-1 py-2 max-w-[2rem] font-light text-sm text-center sticky top-0 bg-slate-700 text-white sm:py-3 sm:font-medium lg:text-base">
-          Billing period
+        <th className="py-3 max-w-[2rem] font-light text-sm text-center sticky text-slate-700 border border-slate-300 bg-slate-300">
+          Billing no.
         </th>
-        <th className="px-1 py-2 max-w-[2rem] font-light text-sm text-center sticky top-0 bg-slate-600 text-white sm:py-3 sm:font-medium lg:text-base">
-          Total monthly bill
+        <th className="py-3 max-w-[2rem] font-light text-sm text-center sticky text-slate-700 border border-slate-300 bg-slate-300">
+          Billing date
         </th>
-        <th className="px-1 py-2 max-w-[2rem] font-light text-sm text-center sticky top-0 bg-slate-700 text-white sm:py-3 sm:font-medium lg:text-base">
-          Status
+        <th className="py-3 max-w-[2rem] font-light text-sm text-center sticky text-slate-700 border border-slate-300 bg-slate-300">
+          Payment status
         </th>
-        <th className="px-1 py-2 max-w-[1rem] font-light text-sm text-center sticky top-0 bg-slate-600 text-white sm:py-3 sm:font-medium lg:text-base">
+        <th className="py-3 max-w-[2rem] font-light text-sm text-center sticky text-slate-700 border border-slate-300 bg-slate-300">
+          Payment date
+        </th>
+        <th className="py-3 max-w-[2rem] font-light text-sm text-center sticky text-slate-700 border border-slate-300 bg-slate-300">
+          Total amount
+        </th>
+        <th className="py-3 max-w-[2rem] font-light text-sm text-center sticky text-slate-700 border border-slate-300 bg-slate-300">
           Action
         </th>
       </tr>

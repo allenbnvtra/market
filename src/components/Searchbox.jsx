@@ -20,17 +20,17 @@ const SearchBox = ({ getSearchResult }) => {
   }, [getSearchResult, query]);
 
   return (
-    <div className="w-[85%] mb-4 bg-gray-100 rounded-md flex items-center gap-3">
+    <div className="w-[100%] lg:w-[85%] mb-4 bg-gray-100 rounded-md flex items-center gap-3">
       <label className="font-bold text-lg" htmlFor="search">
         Search:
       </label>
       <input
         name="search"
         type="text"
-        placeholder="Search tenant name"
+        placeholder="Search a tenant name"
         value={query}
         onChange={handleInputChange}
-        className="w-[20%]] p-2 border border-slate-400 rounded-md mr-5 focus:outline-none"
+        className="w-[100%] sm:w-[40%] lg:w-[35%] pl-4 py-1 bg-slate-100 border border-slate-400 mr-5 focus:outline-none rounded-full"
       />
     </div>
   );

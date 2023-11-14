@@ -1,8 +1,8 @@
-import InfoBox from "@/components/InfoBox";
+import TenantTable from "@/components/TenantTable";
 import React from "react";
 
 const page = () => {
-  return <InfoBox />;
+  return <TenantTable />;
 };
 
 export default page;
