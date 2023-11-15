@@ -2,18 +2,18 @@ import React from "react";
 
 const TenantThead = () => {
   return (
-    <thead>
+    <thead className="sticky top-0 z-10 bg-slate-300">
       <tr>
-        <th className="px-1 py-2 max-w-[3rem] font-light text-sm text-center sticky top-0 bg-slate-700 text-white sm:py-3 sm:font-medium lg:text-base">
+        <th className="py-3 max-w-[2rem] text-sm text-center  text-black font-medium">
           Stall no.
         </th>
-        <th className="px-1 py-2 max-w-[3rem] font-light text-sm text-center sticky top-0 bg-slate-600 text-white sm:py-3 sm:font-medium lg:text-base">
+        <th className="py-3 max-w-[2rem] text-sm text-center  text-black font-medium">
           Name
         </th>
-        <th className="px-1 py-2 max-w-[3rem] font-light text-sm text-center sticky top-0 bg-slate-700 text-white sm:py-3 sm:font-medium lg:text-base">
+        <th className="py-3 max-w-[2rem] text-sm text-center  text-black font-medium">
           Email
         </th>
-        <th className="px-1 py-2 max-w-[3rem] font-light text-sm text-center sticky top-0 bg-slate-600 text-white sm:py-3 sm:font-medium lg:text-base">
+        <th className="py-3 max-w-[2rem] text-sm text-center  text-black font-medium">
           Action
         </th>
       </tr>

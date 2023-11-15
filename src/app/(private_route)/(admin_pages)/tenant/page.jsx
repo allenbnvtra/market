@@ -1,8 +1,8 @@
-import TenantTable from "@/components/TenantTable";
+import TenantTable from "./../../../../components/TenantTable";
 import React from "react";
 
-const page = () => {
+const TenantPage = () => {
   return <TenantTable />;
 };
 
-export default page;
+export default TenantPage;

@@ -1,7 +1,7 @@
-import connectMongoDB from "@/libs/mongodb";
-import User from "@/models/user";
+import connectMongoDB from "../../../libs/mongodb";
+import User from "./../../../models/user";
 import { NextResponse } from "next/server";
-import { restrictTo } from "@/middleware/authmiddleware";
+import { restrictTo } from "./../../../middleware/authmiddleware";
 
 export async function GET(request) {
   await connectMongoDB();

@@ -20,7 +20,7 @@ const SearchBox = ({ getSearchResult }) => {
   }, [getSearchResult, query]);
 
   return (
-    <div className="w-[100%] lg:w-[85%] mb-4 bg-gray-100 rounded-md flex items-center gap-3">
+    <div className="w-[100%] lg:w-[85%] mb-6 bg-gray-100 rounded-md flex items-center gap-3">
       <label className="font-bold text-lg" htmlFor="search">
         Search:
       </label>

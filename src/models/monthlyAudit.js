@@ -3,34 +3,27 @@ import mongoose from "mongoose";
 const monthlyAuditSchema = new mongoose.Schema(
   {
     userId: String,
-    currentBalance: Number,
-    currentBalanceStatus: {
-      type: String,
-      enum: ["paid", "unpaid"],
-      default: "unpaid",
-    },
-    previousBalance: Number,
-    previousBalanceStatus: {
-      type: String,
-      enum: ["paid", "unpaid"],
-      default: "unpaid",
-    },
-    currentReading: Number,
-    previousReading: Number,
-    totalConsumption: Number,
-    amountPaid: Number,
-    credits: Number,
-    creditStatus: {
-      type: String,
-      enum: ["paid", "unpaid"],
-      default: "unpaid",
-    },
-    billingPeriod: Date,
+    currentBill: { type: Number, default: 0 },
+    previousBill: { type: Number, default: 0 },
+    currentReading: { type: Number, default: 0 },
+    previousReading: { type: Number, default: 0 },
+    totalConsumption: { type: Number, default: 0 },
+    amountPaid: { type: Number, default: 0 },
+    remainingBalance: { type: Number, default: 0 },
+    billingPeriodFrom: Date,
+    billingPeriodTo: Date,
   },
   {
     timestamps: true,
   }
 );
+
+monthlyAuditSchema.pre("save", function (next) {
+  if (this.totalConsumption !== undefined) {
+    this.currentBill = this.totalConsumption * 12;
+  }
+  next();
+});
 
 monthlyAuditSchema.pre("save", function (next) {
   if (this.currentReading !== undefined && this.previousReading !== undefined) {

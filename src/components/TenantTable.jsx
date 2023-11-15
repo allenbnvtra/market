@@ -50,9 +50,9 @@ const TenantTable = () => {
   }
 
   return (
-    <div className=" w-full flex flex-col justify-center items-center mt-[3rem]">
+    <div className=" w-full flex flex-col justify-center items-center">
       <SearchBox getSearchResult={setUsers} />
-      <div className="w-[100%] max-h-[26rem] overflow-scroll lg:w-[85%]">
+      <div className="w-[100%] max-h-[26rem] overflow-auto lg:w-[85%]">
         <table className="w-full caption-bottom text-sm">
           <TenantThead />
           {users.map((user) => (
@@ -61,7 +61,7 @@ const TenantTable = () => {
               name={user.name}
               stallnumber={user.stallNumber}
               email={user.email}
-              href={`/tenant/${user._id}`}
+              href={`/tenant/${user._id}/month`}
             />
           ))}
         </table>

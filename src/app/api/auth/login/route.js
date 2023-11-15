@@ -1,8 +1,8 @@
-import User from "@/models/user";
+import User from "./../../../../models/user";
 import { compare } from "bcryptjs";
 import { NextRequest, NextResponse } from "next/server";
 import jwt from "jsonwebtoken";
-import connectMongoDB from "@/libs/mongodb";
+import connectMongoDB from "./../../../../libs/mongodb";
 
 export async function POST(request) {
   await connectMongoDB();

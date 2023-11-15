@@ -3,22 +3,19 @@ import React from "react";
 
 const TenantTbody = ({ name, stallnumber, email, key, href }) => {
   return (
-    <tbody>
-      <tr
-        key={key}
-        className="border-b border-b-slate-400 transition-colors hover:bg-slate-200 hover:border-x hover:border-x-slate-400 cursor-default"
-      >
-        <td className="p-1 align-middle h-[3rem] max-w-[2rem] w-[2rem] overflow-hidden whitespace-nowrap overflow-ellipsis text-xs font-light text-center sm:text-base">
+    <tbody className="overflow-y-auto h-[2rem] max-h-[2rem]">
+      <tr key={key} className="border border-slate-300 hover:bg-gray-100">
+        <td className="py-2 max-w-[2rem] font-light text-sm text-center sticky sm:py-3 ">
           {stallnumber}
         </td>
-        <td className="p-1 align-middle h-[3rem] max-w-[3rem] w-[3rem] overflow-hidden whitespace-nowrap overflow-ellipsis text-xs font-light text-center sm:text-base">
+        <td className="py-2 max-w-[2rem] font-light text-sm text-center sticky sm:py-3 ">
           {name}
         </td>
-        <td className="p-1 align-middle h-[3rem] max-w-[3rem] w-[3rem] overflow-hidden whitespace-nowrap overflow-ellipsis text-xs font-light text-center sm:text-base">
+        <td className="py-2 max-w-[2rem] font-light text-sm text-center sticky sm:py-3 ">
           {email}
         </td>
-        <td className="underline p-1 align-middle h-[3rem] max-w-[3rem] w-[3rem] overflow-hidden whitespace-nowrap overflow-ellipsis text-xs text-blue-700 font-light text-center sm:text-base">
-          <Link href={href}>view</Link>
+        <td className="py-2 max-w-[2rem] font-light text-sm text-center sticky sm:py-3 text-blue-700 capitalize">
+          <Link href={href}> view details &gt;</Link>
         </td>
       </tr>
     </tbody>

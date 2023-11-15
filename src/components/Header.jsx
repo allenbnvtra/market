@@ -7,7 +7,7 @@ import { useSession } from "next-auth/react";
 const Header = () => {
   const { data } = useSession();
   return (
-    <div className="fixed bg-[#27374D] w-full py-3 px-6 flex justify-between items-center flex-grow">
+    <div className="fixed bg-[#27374D] w-full py-3 px-6 flex justify-between items-center flex-grow z-30">
       <div className="text-white text-3xl flex items-center">
         <h1 className=" font-semibold text-xl text-white hidden lg:block">
           Admin Dashboard

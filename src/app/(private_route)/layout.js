@@ -1,10 +1,9 @@
 // import LeftNav from "@/components/LeftNav";
-import Navbar from "@/components/Navbar";
+import Navbar from "./../../components/Navbar";
 import { getServerSession } from "next-auth";
 import { authOption } from "../api/auth/[...nextauth]/route";
 import { redirect } from "next/navigation";
-import Header from "@/components/Header";
-import { signOut } from "next-auth/react";
+import Header from "./../../components/Header";
 
 export default async function PrivatePagesLayout({ children }) {
   const session = await getServerSession(authOption);
