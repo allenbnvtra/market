@@ -2,36 +2,61 @@ import mongoose from "mongoose";
 
 const monthlyAuditSchema = new mongoose.Schema(
   {
-    userId: String,
-    currentBill: { type: Number, default: 0 },
-    previousBill: { type: Number, default: 0 },
-    currentReading: { type: Number, default: 0 },
-    previousReading: { type: Number, default: 0 },
-    totalConsumption: { type: Number, default: 0 },
+    user: {
+      type: mongoose.Schema.ObjectId,
+      ref: "User",
+      required: [true, "Monthly bill must belong to a user"],
+    },
+    currentBill: {
+      type: Number,
+      default: 0,
+    },
+    previousBill: {
+      type: Number,
+      required: true,
+      default: 0,
+    },
+    currentReading: {
+      type: Number,
+      required: true,
+      default: 0,
+    },
+    previousReading: {
+      type: Number,
+      required: true,
+      default: 0,
+    },
+    totalConsumption: {
+      type: Number,
+      default: 0,
+    },
     amountPaid: { type: Number, default: 0 },
     remainingBalance: { type: Number, default: 0 },
-    billingPeriodFrom: Date,
-    billingPeriodTo: Date,
+    billingPeriodFrom: String,
+    billingPeriodTo: String,
   },
   {
     timestamps: true,
+    toJSON: { virtuals: true },
+    toObject: { virtuals: true },
   }
 );
 
-monthlyAuditSchema.pre("save", function (next) {
-  if (this.totalConsumption !== undefined) {
-    this.currentBill = this.totalConsumption * 12;
-  }
+monthlyAuditSchema.pre(/^find/, function (next) {
+  this.populate({
+    path: "user",
+    select: "name stallNumber",
+  });
   next();
 });
 
-monthlyAuditSchema.pre("save", function (next) {
-  if (this.currentReading !== undefined && this.previousReading !== undefined) {
-    this.totalConsumption = this.currentReading - this.previousReading;
-  }
-  next();
-});
+// monthlyAuditSchema.pre("save", function (next) {
+//   if (this.totalConsumption !== undefined) {
+//     this.currentBill = this.totalConsumption * 12;
+//   }
+//   next();
+// });
 
 module.exports =
-  mongoose.model.MonthlyAudit ||
+  mongoose.models.MonthlyAudit ||
   mongoose.model("MonthlyAudit", monthlyAuditSchema);

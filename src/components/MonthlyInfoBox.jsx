@@ -1,11 +1,27 @@
-const MonthlyInfoBox = () => {
+const MonthlyInfoBox = ({
+  name,
+  tenantNo,
+  previousBill,
+  currentBill,
+  previousReading,
+  currentReading,
+  totalConsumption,
+  billingFrom,
+  billingTo,
+  amountPaid,
+  remainingBalance,
+}) => {
+  const isPaid = remainingBalance === 0;
+
   return (
     <div className="flex flex-col w-full gap-2 px-3 py-3 bg-slate-100 border border-slate-300 rounded-md shadow-md md:w-[100%] md:px-8 md:py-8 lg:text-base lg:w-[85%] lg:px-40 lg:gap-6">
       <div className="flex flex-col gap-3 text-sm justify-between md:flex-row lg:text-base">
         <div className="flex flex-col gap-4">
           <div className="flex flex-col gap-1">
             <h1 className="flex gap-2 text-lg font-semibold">Tenant Info:</h1>
-            <p className="flex flex-row gap-2">Allen Buenaventura, COC 102</p>
+            <p className="flex flex-row gap-2">
+              {name}, {tenantNo}
+            </p>
           </div>
 
           <div className="flex flex-col gap-1">
@@ -13,23 +29,23 @@ const MonthlyInfoBox = () => {
               Monthly bill amount:
             </h1>
             <p className="flex flex-row gap-2">
-              Previous:<span>₱ 1500</span>
+              Previous:<span>₱ {previousBill}</span>
             </p>
             <p className="flex flex-row gap-2">
-              Current:<span>₱ 2000</span>
+              Current:<span>₱ {currentBill}</span>
             </p>
           </div>
 
           <div className="flex flex-col gap-1">
             <h1 className="flex gap-2 text-lg font-semibold">Meter Reading:</h1>
             <p className="flex flex-row gap-2">
-              Previous(KwH):<span>650</span>
+              Previous(KwH):<span>{previousReading}</span>
             </p>
             <p className="flex flex-row gap-2">
-              Current(KwH):<span>550</span>
+              Current(KwH):<span>{currentReading}</span>
             </p>
             <p className="flex flex-row gap-2">
-              Total Consumption(KwH):<span>150</span>
+              Total Consumption(KwH):<span>{totalConsumption}</span>
             </p>
           </div>
         </div>
@@ -40,23 +56,31 @@ const MonthlyInfoBox = () => {
               Billing period:
             </h1>
             <p className="flex flex-row gap-2">
-              January, 2023 - February, 2023
+              {billingFrom} - {billingTo}
             </p>
-          </div>
-
-          <div className="flex flex-col gap-1">
-            <h1 className="flex gap-2 text-lg font-semibold">Status:</h1>
-            <p className="flex flex-row gap-2">Unpaid</p>
           </div>
 
           <div className="flex flex-col gap-1">
             <h1 className="flex gap-2 text-lg font-semibold">Balance:</h1>
             <p className="flex flex-row gap-2">
-              Amount paid:<span>₱ 1500</span>
+              Amount paid:<span>₱ {amountPaid}</span>
             </p>
             <p className="flex flex-row gap-2">
-              Remaining balance:<span>₱ 500</span>
+              Remaining balance:<span>₱ {remainingBalance}</span>
             </p>
+          </div>
+
+          <div className="flex flex-col gap-1">
+            <h1 className="flex gap-2 text-lg font-semibold">Status:</h1>
+            {isPaid ? (
+              <p className="border w-20 flex justify-center rounded-md bg-green-300">
+                Paid
+              </p>
+            ) : (
+              <p className="border w-20 flex justify-center rounded-md bg-red-300">
+                Unpaid
+              </p>
+            )}
           </div>
         </div>
       </div>

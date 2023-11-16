@@ -30,14 +30,6 @@ const TenantTable = () => {
     fetchData();
   }, []);
 
-  if (!users) {
-    return (
-      <h1 className="flex justify-center items-center text-center w-full h-[70vh]">
-        No user found!
-      </h1>
-    );
-  }
-
   if (loading) {
     return (
       <div className=" w-full flex justify-center justify-items-center mt-3s">
@@ -46,6 +38,14 @@ const TenantTable = () => {
           <Skeleton height={50} className="z-0" count={7} />
         </div>
       </div>
+    );
+  }
+
+  if (users.length === 0) {
+    return (
+      <h1 className="flex justify-center items-center text-center w-full h-[70vh]">
+        No user found!
+      </h1>
     );
   }
 

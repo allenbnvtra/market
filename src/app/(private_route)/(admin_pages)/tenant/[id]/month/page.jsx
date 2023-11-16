@@ -1,9 +1,9 @@
 import MonthlyTable from "./../../../../../../components/MonthlyTable";
 
-const TenantInfoPage = () => {
+const TenantInfoPage = ({ params }) => {
   return (
     <div className="flex flex-col w-full justify-center items-center">
-      <MonthlyTable />
+      <MonthlyTable myparam={params.id} />
     </div>
   );
 };
