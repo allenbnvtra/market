@@ -1,3 +1,8 @@
+"use client";
+
+import PaymentModal from "./PaymentModal";
+import { useState } from "react";
+
 const MonthlyInfoBox = ({
   name,
   tenantNo,
@@ -10,8 +15,22 @@ const MonthlyInfoBox = ({
   billingTo,
   amountPaid,
   remainingBalance,
+  billId,
 }) => {
   const isPaid = remainingBalance === 0;
+
+  const [showModal, setShowModal] = useState(false);
+
+  const openModal = () => {
+    setShowModal(true);
+  };
+
+  // Function to close the modal
+  const closeModal = () => {
+    setShowModal(false);
+  };
+
+  // Function to handle form submission
 
   return (
     <div className="flex flex-col w-full gap-2 px-3 py-3 bg-slate-100 border border-slate-300 rounded-md shadow-md md:w-[100%] md:px-8 md:py-8 lg:text-base lg:w-[85%] lg:px-40 lg:gap-6">
@@ -85,9 +104,17 @@ const MonthlyInfoBox = ({
         </div>
       </div>
       <div className="flex justify-end gap-4">
-        <button className="bg-slate-800 px-4 py-2 text-white rounded-md hover:bg-slate-900">
+        <button
+          onClick={openModal}
+          className="bg-green-500 px-4 py-2 text-white rounded-md hover:bg-green-600"
+        >
           Make a payment
         </button>
+        <PaymentModal
+          showModal={showModal}
+          onClose={closeModal}
+          billId={billId}
+        />
       </div>
     </div>
   );

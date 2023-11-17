@@ -1,20 +1,28 @@
+"use client";
+
 import React from "react";
 
-const HistoryTbody = () => {
+const HistoryTbody = ({
+  recieptNo,
+  paymentDate,
+  paymentAmount,
+  remainingBalance,
+  key,
+}) => {
   return (
     <tbody className="overflow-y-auto h-[2rem] max-h-[2rem]">
-      <tr className="border border-slate-300 hover:bg-gray-200">
+      <tr key={key} className="border border-slate-300 hover:bg-gray-200">
         <td className="py-2 max-w-[2rem] font-light text-sm text-center sticky sm:py-3">
-          Jan. 2022- Feb 2022
+          {recieptNo}
         </td>
         <td className="py-2 max-w-[2rem] font-light text-sm text-center sticky sm:py-3">
-          Feb. 13, 2022
+          {paymentDate}
         </td>
         <td className="py-2 max-w-[2rem] font-light text-sm text-center sticky sm:py-3">
-          1000
+          {paymentAmount}
         </td>
         <td className="py-2 max-w-[2rem] font-light text-sm text-center sticky sm:py-3">
-          3000
+          {remainingBalance}
         </td>
       </tr>
     </tbody>

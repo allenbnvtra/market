@@ -30,7 +30,6 @@ const monthlyAuditSchema = new mongoose.Schema(
       type: Number,
       default: 0,
     },
-    amountPaid: { type: Number, default: 0 },
     remainingBalance: { type: Number, default: 0 },
     billingPeriodFrom: String,
     billingPeriodTo: String,
@@ -57,6 +56,8 @@ monthlyAuditSchema.pre(/^find/, function (next) {
 //   next();
 // });
 
-module.exports =
+const MonthlyAudit =
   mongoose.models.MonthlyAudit ||
   mongoose.model("MonthlyAudit", monthlyAuditSchema);
+
+export default MonthlyAudit;

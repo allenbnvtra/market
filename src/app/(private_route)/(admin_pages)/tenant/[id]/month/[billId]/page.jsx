@@ -18,7 +18,6 @@ const BillPerTenant = ({ params }) => {
       try {
         const res = await axios.get(`/api/tenants/bill/${billId}`);
         setData(res.data.data);
-
         setTimeout(() => {
           setLoading(false);
         }, 2000);
@@ -64,13 +63,14 @@ const BillPerTenant = ({ params }) => {
           billingTo={data.billingPeriodTo}
           amountPaid={data.amountPaid}
           remainingBalance={data.remainingBalance}
+          billId={billId}
         />
       ) : (
         <h1 className="flex justify-center items-center text-center w-full h-[70vh]">
           No user found!
         </h1>
       )}
-      <History />
+      <History billId={billId} />
     </div>
   );
 };
