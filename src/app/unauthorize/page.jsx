@@ -1,7 +1,7 @@
 import React from "react";
-import SignOut from "@/components/SignOut";
+import SignOut from "./../../components/SignOut";
 import { getServerSession } from "next-auth";
-import { authOption } from "@/app/api/auth/[...nextauth]/route";
+import { authOption } from "./../../app/api/auth/[...nextauth]/route";
 import { redirect } from "next/navigation";
 
 const page = async () => {
