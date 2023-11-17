@@ -1,6 +1,7 @@
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import { AuthProvider } from "./Providers";
+/* eslint eqeqeq: "off", curly: "error" */
 
 const poppins = Poppins({
   weight: ["100", "200", "300", "400", "500", "700"],

@@ -1,12 +1,8 @@
-import mongoose from "mongoose";
+// db.js or mongoose.js
+const mongoose = require("mongoose");
+const uri = process.env.MONGOBD_URI; // Replace with your actual MongoDB connection string
 
-const connectMongoDB = async () => {
-  mongoose
-    .connect(process.env.MONGODB_URI)
-    .then(() => console.log("Connected to database!"))
-    .catch((err) =>
-      console.log(`Getting an error from DB connection.. ERROR: ${err.message}`)
-    );
-};
-
-export default connectMongoDB;
+mongoose
+  .connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => console.log("Connected to MongoDB"))
+  .catch((error) => console.error("Error connecting to MongoDB", error));
